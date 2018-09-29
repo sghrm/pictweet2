@@ -53,3 +53,6 @@ gem 'sprockets','2.11.0'
 gem 'kaminari'
 gem 'devise'
 
+group :test do
+	gem 'faker'
+end
