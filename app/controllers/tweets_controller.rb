@@ -1,12 +1,12 @@
 class TweetsController < ApplicationController
 # コントローラーのクラス
-  before_action :move_to_index, except: [:index, :show]
+  # before_action :move_to_index, except: [:index, :show]
 # indexアクション（インスタンスメソッド）
   def index
     @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     #インスタンス変数の定義
-
   end
+
   def new
   end
 
@@ -43,5 +43,4 @@ class TweetsController < ApplicationController
   def move_to_index
     redirect_to action:  :index unless user_signed_in?
   end
-
 end
